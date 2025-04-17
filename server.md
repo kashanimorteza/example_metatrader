@@ -149,4 +149,6 @@
 
     zmq = DWX_ZeroMQ_Connector()
 
-    zmq.account(model="Balance")
+    bc = zmq.account(model="Balance")
+
+    print(bc)
