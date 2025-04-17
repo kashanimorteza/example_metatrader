@@ -43,8 +43,8 @@ Linux
     wine fxcm4setup.exe
 
 #### Source
-    git clone git@github.com:kashanimorteza/forex_metatrader.git
-    cd ./forex_metatrader
+    git clone git@github.com:kashanimorteza/example_metatrader.git
+    cd ./example_metatrader
 
 #### Python
     add-apt-repository ppa:deadsnakes/ppa
