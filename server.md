@@ -45,6 +45,7 @@
     git clone https://github.com/darwinex/dwx-zeromq-connector.git
 
 
+
 <!---------------------------------------[Copy]-->
 <br><br>
 
@@ -66,7 +67,7 @@
 
 
 
-<!---------------------------------------[Copy]-->
+<!---------------------------------------[Permission]-->
 <br><br>
 
 ## Permission

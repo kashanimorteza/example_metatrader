@@ -723,6 +723,19 @@ class DWX_ZeroMQ_Connector():
             _msg = _exstr.format(type(ex).__name__, ex.args)
             print(_msg)
 
+    ##############################################################################
+    def account(self, model):
+        try:
+            subject = 'account'
+            self._set_response_(None)                    
+            _msg = f"{subject};{model}"
+            self.remote_send(self._PUSH_SOCKET, _msg)                      
+            while self._valid_response_('zmq') == False: sleep(0.1)
+            response = self._get_response_()
+            return response
+        except KeyError:
+            print("error")
+
 ##############################################################################
 
 def _DWX_ZMQ_CLEANUP_(_name='DWX_ZeroMQ_Connector',
@@ -751,3 +764,4 @@ def _DWX_ZMQ_CLEANUP_(_name='DWX_ZeroMQ_Connector',
             print(_msg)
             
 ##############################################################################
+
