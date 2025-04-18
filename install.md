@@ -36,7 +36,14 @@
 
 <!---------------------------------------[GUI]-->
 ## Gui
-    sudo apt install xfce4 xfce4-goodies -y
+    apt install xfce4 xfce4-goodies -y
+
+    apt install xorg dbus-x11 x11-xserver-utils 
+    apt install xfce4 xfce4-goodies 
+    apt install ubuntu-desktop 
+    apt install task-gnome-desktop
+
+    systemctl set-default graphical.target
 
 <!---------------------------------------[XRDP]-->
 ## XRDP
@@ -67,6 +74,16 @@
     sudo journalctl -f -u xrdp 
 
     sudo -u xrdp cat /etc/xrdp/key.pem
+    vim /lib/systemd/system/xrdp.service
+
+    sudo mkdir -p /var/lib/xrdp
+    sudo cp /etc/xrdp/*.pem /var/lib/xrdp/
+    sudo chown xrdp:xrdp /var/lib/xrdp/*.pem
+    sudo chmod 600 /var/lib/xrdp/key.pem
+    sudo chmod 644 /var/lib/xrdp/cert.pem
+
+    certificate=/var/lib/xrdp/cert.pem
+    key_file=/var/lib/xrdp/key.pem
 
 
 
