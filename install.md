@@ -31,7 +31,7 @@
 
 <!---------------------------------------[User]-->
 ## User
-    useradd -m -p $(openssl passwd -1 "UjXn2r5u8x/A?D(G-KaP") "morteza"
+    useradd -m -p $(openssl passwd -1 "123456") "morteza"
     echo "morteza ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 <!---------------------------------------[GUI]-->
