@@ -34,16 +34,17 @@
 
 #### Mac
     cd /Volumes/Data/develop/metatrader
-    git clone https://github.com/dingmaotu/mql-zmq.git
-    git clone https://github.com/dingmaotu/mql4-lib.git
-    git clone https://github.com/darwinex/dwx-zeromq-connector.git
 
 #### Linux
     cd /home/morteza/Documents/
+
+#### Windows
+    cd Downloads
+
+#### Download
     git clone https://github.com/dingmaotu/mql-zmq.git
     git clone https://github.com/dingmaotu/mql4-lib.git
     git clone https://github.com/darwinex/dwx-zeromq-connector.git
-
 
 
 <!---------------------------------------[Copy]-->
@@ -64,8 +65,7 @@
     cp -fr /home/morteza/Documents/mql4-lib/* /home/morteza/.wine//drive_c/Program\ Files\ \(x86\)/FXCM\ MetaTrader\ 4/MQL4/Include/Mql/
     cp -fr /home/morteza/Documents/dwx-zeromq-connector/v2.0.1/mql4/DWX_ZeroMQ_Server_v2.0.1_RC8.mq4 /home/morteza/.wine//drive_c/Program\ Files\ \(x86\)/FXCM\ MetaTrader\ 4/MQL4/Experts/
     cp -fr /home/morteza/Documents/dwx-zeromq-connector/v2.0.1/python/api/DWX_ZeroMQ_Connector_v2_0_1_RC8.py /home/morteza/Documents/forex_metatrader
-
-
+    
 
 <!---------------------------------------[Permission]-->
 <br><br>
