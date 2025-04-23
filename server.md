@@ -2,31 +2,6 @@
 ## Description
     Create metatrader as a server for run command
 
-
-<!---------------------------------------[Python]-->
-<br><br>
-
-## Python
-
-#### Source
-    git clone git@github.com:kashanimorteza/example_metatrader.git
-    cd ./example_metatrader
-
-#### Python
-    add-apt-repository ppa:deadsnakes/ppa
-	apt update -y
-	apt install python3 -y
-	apt install python3-pip -y
-	apt install python3-venv -y
-
-#### Python virtual environment 
-	python3 -m venv .myenv3
-	.myenv3/bin/python3 -m pip install --upgrade pip
-	source .myenv3/bin/activate
-	pip install -r requirements.txt
-
-
-
 <!---------------------------------------[Source]-->
 <br><br>
 
@@ -65,7 +40,12 @@
     cp -fr /home/morteza/Documents/mql4-lib/* /home/morteza/.wine//drive_c/Program\ Files\ \(x86\)/FXCM\ MetaTrader\ 4/MQL4/Include/Mql/
     cp -fr /home/morteza/Documents/dwx-zeromq-connector/v2.0.1/mql4/DWX_ZeroMQ_Server_v2.0.1_RC8.mq4 /home/morteza/.wine//drive_c/Program\ Files\ \(x86\)/FXCM\ MetaTrader\ 4/MQL4/Experts/
     cp -fr /home/morteza/Documents/dwx-zeromq-connector/v2.0.1/python/api/DWX_ZeroMQ_Connector_v2_0_1_RC8.py /home/morteza/Documents/forex_metatrader
-    
+
+#### Windows
+    Copy    Downloads/mql-zmq/Include/*                                                   To    MQL4/Include/
+    Copy    Downloads/mql-zmq/Library/MT4/*                                               To    MQL4/Libraries/
+    Copy    Downloads/mql4-lib/*                                                          To    MQL4/Include/Mql/
+    Copy    Downloads/dwx-zeromq-connector/v2.0.1/mql4/DWX_ZeroMQ_Server_v2.0.1_RC8.mq4   To    MQL4/Experts/
 
 <!---------------------------------------[Permission]-->
 <br><br>
@@ -120,35 +100,25 @@
         InformPullClient(pSocket, zmq_ret);
     break;
 
+<!---------------------------------------[Arm libzmq]-->
+## Arm libzmq
 
-<!---------------------------------------[DWX_ZeroMQ_Connector_v2_0_1_RC8.py]-->
-<br><br>
+#### Requirement
+    https://download.microsoft.com/download/2/e/6/2e61cfa4-993b-4dd4-91da-3737cd5cd6e3/vcredist_x64.exe
+    https://download.microsoft.com/download/2/e/6/2e61cfa4-993b-4dd4-91da-3737cd5cd6e3/vcredist_x86.exe
 
-## DWX_ZeroMQ_Connector_v2_0_1_RC8.py
+#### Install visual studio 2022 
+    https://visualstudio.microsoft.com/downloads/
+        install Desktop development with C++ 
+        install MSVC v143 - VS 2022 C++ ARM64 build tools
 
-    def account(self, model):
-        try:
-            subject = 'account'
-            self._set_response_(None)                    
-            _msg = f"{subject};{model}"
-            self.remote_send(self._PUSH_SOCKET, _msg)                      
-            while self._valid_response_('zmq') == False: sleep(0.1)
-            response = self._get_response_()
-            return response
-        except KeyError:
-            print("error")
+#### Install cmake
+    https://cmake.org/download/
 
-
-
-<!---------------------------------------[client]-->
-<br><br>
-
-## client.py
-
-    from DWX_ZeroMQ_Connector_v2_0_1_RC8 import DWX_ZeroMQ_Connector
-
-    zmq = DWX_ZeroMQ_Connector()
-
-    bc = zmq.account(model="Balance")
-
-    print(bc)
+#### Compile libzmq 
+    git clone https://github.com/zeromq/libzmq.git
+    cd libzmq
+    mkdir build-arm64
+    cd build-arm64
+    cmake .. -G "Visual Studio 17 2022" -A ARM64 -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    cmake --build . --config Release

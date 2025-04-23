@@ -28,7 +28,7 @@ class DWX_ZeroMQ_Connector():
     """
     def __init__(self, 
                  _ClientID='dwx-zeromq',    # Unique ID for this client
-                 _host='localhost',         # Host to connect to
+                 _host='192.168.1.111',         # Host to connect to
                  _protocol='tcp',           # Connection protocol
                  _PUSH_PORT=32768,          # Port for Sending commands
                  _PULL_PORT=32769,          # Port for Receiving responses
