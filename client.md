@@ -79,38 +79,3 @@
     bc = zmq.account(model="Balance")
 
     print(bc)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!---------------------------------------[client]-->
-## Arm libzmq
-
-#### Install visual studio 2022 
-    https://visualstudio.microsoft.com/downloads/
-        install Desktop development with C++ 
-        install MSVC v143 - VS 2022 C++ ARM64 build tools
-
-#### Install cmake
-    https://cmake.org/download/
-
-#### Compile libzmq 
-    git clone https://github.com/zeromq/libzmq.git
-    cd libzmq
-    mkdir build-arm64
-    cd build-arm64
-    cmake .. -G "Visual Studio 17 2022" -A ARM64 -DCMAKE_POLICY_VERSION_MINIMUM=3.5
-    cmake --build . --config Release
-
-
