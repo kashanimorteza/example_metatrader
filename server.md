@@ -100,7 +100,11 @@
         InformPullClient(pSocket, zmq_ret);
     break;
 
+
+    
 <!---------------------------------------[Arm libzmq]-->
+<br><br>
+
 ## Arm libzmq
 
 #### Requirement
